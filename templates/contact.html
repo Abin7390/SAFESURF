@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Contact Us - SafeSurf</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.css')}}">
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='css/responsive.css')}}" rel="stylesheet">
+<style>
+    .contact_section {
+  padding: 60px 10;
+  background-color: #3a584c20;
+}
+
+
+.heading_container h2 {
+    margin-top: 200px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.contact_info {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact_info p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.contact_info p strong {
+  font-weight: 600;
+  color: #333;
+}
+
+.contact_info p:last-child {
+  margin-bottom: 0;
+}
+
+
+@media (max-width: 767px) {
+  .contact_section {
+    padding: 40px 0;
+  }
+
+  .contact_info {
+    padding: 20px;
+  }
+
+  .heading_container h2 {
+    font-size: 28px;
+  }
+
+  .contact_info p {
+    font-size: 16px;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <!-- header section starts -->
+    <header class="header_section">
+      <div class="container">
+        <div class="header_nav">
+          <a class="navbar-brand brand_desktop" href="/" style="margin-left: -100px;">
+            <img src="/static/images/logo.png" alt="">
+          </a>
+          <div class="main_nav">
+            <div class="top_nav">
+              <ul class="" style="margin-top: 60px;margin-bottom: 10px;margin-right: -100px; ">
+                <li class="">
+                  <a class="" href="/" style="color: black;">
+                    Home
+                  </a>
+                </li>
+                <li class="">
+                  <a class="" href="/about" style="color: black;">
+                    About
+                  </a>
+                </li>
+                <li class="">
+                  <a class="" href="/index#why_us" style="color: black;">
+                    Why Us
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+
+    <!-- contact section -->
+    <section class="contact_section layout_padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 mx-auto">
+              <div class="heading_container">
+                <h2>
+                  Get In Touch
+                </h2>
+              </div>
+              <div class="contact_info">
+                <p>
+                  <strong>Phone:</strong> +91 6737377770
+                </p>
+                <p>
+                  <strong>Email:</strong> contact@safesurf.com
+                </p>
+                <p>
+                  <strong>Address:</strong> 123 SafeSurf St., Cyber City, Ernakulam
+                </p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end contact section -->
+
+    
+
+    <!-- footer section -->
+    <section class="footer_section">
+      <div class="social_box" style="margin-left: 400px;">
+        <a href="#">
+          <img src="/static/images/facebook.png" alt="">
+        </a>
+        <a href="#">
+          <img src="/static/images/twitter.png" alt="">
+        </a>
+        <a href="#">
+          <img src="/static/images/linkedin.png" alt="">
+        </a>
+        <a href="#">
+          <img src="/static/images/instagram.png" alt="">
+        </a>
+        <a href="#">
+          <img src="/static/images/youtube.png" alt="">
+        </a>
+      </div>
+      <p>
+        &copy; 2024 All Rights Reserved. Design by SafeSurf.
+      </p>
+    </section>
+    <!-- end footer section -->
+  </div>
+
+  <script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
+
+  <!-- Google Map -->
+  <script>
+    function myMap() {
+      var mapProp = {
+        center: new google.maps.LatLng(51.508742, -0.120850),
+        zoom: 5,
+      };
+      var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+  <!-- End Google Map -->
+</body>
+
+</html>

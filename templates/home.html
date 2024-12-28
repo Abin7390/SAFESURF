@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>SeaSurf</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.css')}}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{url_for('static', filename='css/responsive.css')}}" rel="stylesheet" />
+  <style>
+
+.aBody {
+  
+  background: linear-gradient(to right, rgba(53, 184, 36, 0)0%,rgba(53, 184, 36, 0)50%, rgba(53, 184, 36, 0.4)100%), url(static/images/hero-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Ensures the background is fixed */
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 80px; /* Ensures form is not hidden behind the navbar */
+  transition: background-color 0.9s ease-in-out; /* Transition property */
+}
+
+h2 {
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(42, 37, 37, 0.5); /* Adds shadow */
+}
+
+
+/* Animation keyframes for the form */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0.5;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Style for the form */
+form {
+  position: relative;
+  z-index: 100;
+  max-width: 400px;
+  width: 100%; /* Ensures form is responsive */
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0; /* Initially hidden */
+  animation: fadeInUp 1s ease-in-out forwards; /* Apply animation */
+  animation-delay: 0.5s; /* Delay animation start by 0.5 seconds */
+}
+
+/* Style for the input field */
+form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+}
+
+/* Style for the button */
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #5cf7c9;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Button hover effect */
+form button:hover {
+  background-color: #139272;
+}
+
+/* Style for the output message */
+#outputMessage {
+  position: relative;
+  z-index: 100;
+  width: 100%; /* Match the form's width */
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px; /* Match the form's padding */
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Style for the download button */
+.btn-download {
+  display: inline-block;
+  margin: 10px 0;
+  background-color: #374b6069;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 0px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-download:hover {
+  background-color: #828282;
+}
+
+#go_back {
+  z-index: 10;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.back {
+  display: inline-block;
+  margin: 10px 0;
+  background-color: #374b6069;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.back:hover {
+  background-color: #091c3069;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 55px;
+  position: relative;
+  z-index: 1;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  border-top: 8px solid #f4fff7;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spinner 1.5s linear infinite;
+  margin: 0 auto;
+}
+
+
+    
+  </style>
+</head>
+
+<body class="aBody">
+  <div class="">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <div class="header_nav">
+          <a class="navbar-brand brand_desktop" href="/" style="margin-left: -100px;">
+            <img src="/static/images/logo.png" alt="" />
+          </a>
+          
+            <div class="bottom_nav" style="padding-top: 20px ; margin-top: 30px; margin-right: -130px;">
+              <nav class="navbar navbar-expand-lg custom_nav-container">
+                <a class="navbar-brand brand_mobile" href="/">
+                  <img src="/static/images/logo.png" alt="" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                    <ul class="navbar-nav  ">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/about"> About </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/"> why us </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                      </li>
+                    </ul>
+                    
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+<br><br><br>
+  <div class="main" >
+    <h2 class=".heading_container">
+      Check for Phishing
+    </h2>
+    <form id="analyzeForm"  action="/form" method="POST" >
+      <div>
+        <input type="text" name= "url" placeholder="url to Analyze" required >
+      </div>   
+      <div class="d-flex ">
+        <button type="submit">Analyze</button>
+          
+      </div>
+    </form><br><br>
+    <div id="output_animation"></div>
+    {% if Filepath %}
+    <div id="outputMessage">
+      <!-- Output message will be displayed here -->
+      <h6>{{Url}}</h6><br>
+      <h5>{{ result }}</h5><br>
+      
+      <!-- New Download Button -->
+      
+      <h6>Detailed Report: </h6> <a href="{{ url_for('static', filename='report/'+Filepath) }}" download class="btn btn-download">Download Report</a>
+    
+    </div>
+    {% if 'phishing' in result %}
+    <style>
+      .aBody {
+        
+        background: linear-gradient(to right, rgba(189, 49, 14, 0) 0%, rgba(189, 49, 14, 0) 50%, rgba(189, 49, 14, 0) 60%, rgba(255, 0, 0, 0.378) 100%), url(static/images/hero-bg.jpg);
+       }
+
+      form button {
+        background-color: #ff0000;
+      }
+      form button:hover{
+        background-color: #a60000;
+      }
+    </style>
+    {% else %}
+    <style>
+      .aBody {
+        background: linear-gradient(to right, rgba(53, 184, 36, 0) 0%, rgba(53, 184, 36, 0) 50%, rgba(53, 184, 36, 0.4) 100%), url(static/images/hero-bg.jpg);
+      }
+    </style>
+    {% endif %}
+    {% else %}
+      <p></p>
+      {% endif %}
+    <div id="go_back">
+    
+  </div>
+  
+  <!-- info section -->
+  <div class="info_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-10 ml-auto">
+          <div class="row info_main-row">
+            <div class="col-md-6 pr-0">
+
+              
+
+
+              <!-- footer section -->
+              <section class=" footer_section " style="width:100%; margin-left: 700px;">
+                <div class="social_box">
+                  <a href="#">
+                    <img src="static/images/facebook.png" alt="">
+                  </a>
+                  <a href="#">
+                    <img src="static/images/twitter.png" alt="">
+                  </a>
+                  <a href="#">
+                    <img src="static/images/linkedin.png" alt="">
+                  </a>
+                  <a href="#">
+                    <img src="static/images/instagram.png" alt="">
+                  </a>
+                  <a href="#">
+                    <img src="static/images/youtube.png" alt="">
+                  </a>
+                </div>
+                <p>
+                  &copy; 2024 All Rights Reserved. Design by SafeSurf.
+                  
+                </p>
+              </section>
+              <!-- footer section -->
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end info section -->
+
+  <script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+
+  <script>
+    function openNav() {
+      document.getElementById("myNav").classList.toggle("menu_width");
+      document.querySelector(".custom_menu-btn").classList.toggle("menu_btn-style");
+    }
+  </script>
+
+  <!-- owl carousel script -->
+  <script type="text/javascript">
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      navText: [],
+      autoplay: true,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 2
+        },
+        1000: {
+          items: 2
+        }
+      }
+    });
+
+
+    $(".owl_carousel1").owlCarousel({
+      loop: true,
+      margin: 25,
+      nav: true,
+      navText: [],
+      autoplay: true,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 2
+        },
+        1000: {
+          items: 2
+        }
+      }
+    });
+  </script>
+  <!-- end owl carousel script -->
+
+ 
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('analyzeForm');
+
+    if (form) {
+      form.addEventListener('submit', function(event) {
+        const outputMessage = document.getElementById('output_animation');
+        if (outputMessage) {
+          outputMessage.innerHTML = '<div class="spinner"></div>';
+        }
+
+        form.submit();
+      });
+    } else {
+      console.log('Form not found!');
+    }
+  });
+</script>
+
+  
+  
+  
+  
+
+</body>
+
+</html>

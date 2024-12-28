@@ -1,0 +1,27 @@
+1. UsingIp: The URL contains a domain name, so it's likely a safe URL.
+2. longUrl: The URL is not considered long, it's within the normal range.
+3. shortUrl: The URL does not match any known short URL patterns, so it's less likely to be suspicious.
+4. symbol: The URL does not contain the '@' symbol, so it's less likely to be suspicious.
+5. redirecting: The URL does not contain redirection '//' after the protocol, so it's less likely to be suspicious.
+6. prefixSuffix: The domain name doesn't contain a '-' (hyphen), which is less likely to be a characteristic of phishing attempts.
+7. SubDomains: The domain name does not contain subdomains, it's less likely to be suspicious.
+8. Hppts: The URL uses HTTPS which is the secure version of HTTP, so it's less likely to be suspicious.
+9. DomainRegLen: No WHOIS data was retrieved for the domain, or necessary data was missing.
+10. Favicon: A favicon link is found within the page, which is expected for legitimate sites.
+11. NonStdPort: Standard port or no port specified, which is expected for legitimate sites.
+12. HTTPSDomainURL: URL uses HTTPS scheme, which is expected for a valid site.
+13. RequestURL: Moderate percentage of internal URLs.
+14. AnchorURL: A significant number of anchor tags may be unsafe.
+15. LinksInScriptTags: Moderate percentage of links in 'link' and 'script' tags.
+16. ServerFormHandler: All forms have valid action attributes.
+17. InfoEmail: No email-related information found in the HTML content, which is expected for legitimate sites.
+18. AbnormalURL: No abnormal characters found in the URL, which is expected for legitimate sites.
+19. WebsiteForwarding: No suspicious characters found in the URL, which is expected for legitimate sites.
+20. StatusBarCust: No suspicious JavaScript patterns found in the HTML content.
+21. DisableRightClick: No suspicious patterns related to disabling right-click functionality found, which is expected for legitimate sites.
+22. UsingPopupWindow: No suspicious patterns related to popup windows or alerts found, which is expected for legitimate sites.
+23. IframeRedirection: No suspicious patterns related to iframe redirection found, which is expected for legitimate sites.
+24. AgeofDomain: An error occurred while checking the domain age: module 'whois' has no attribute 'whois'
+26. GoogleIndex: The website is in the top 5 Google search results (within <a> tags), indicating high relevance.
+27. LinksPointingToPage: The page has 31 link(s), suggesting it is a well-connected, legitimate site with extensive content and resources.
+28. StatsReport: The URL and IP do not match any known suspicious patterns.

@@ -1,0 +1,11 @@
+python-whois
+urllib3
+googlesearch-python
+beautifulsoup4
+lxml  # Optional, recommended for better parsing with Beautiful Soup
+requests
+Flask
+joblib
+numpy
+threadpoolctl
+scikit-learn==1.4.2 

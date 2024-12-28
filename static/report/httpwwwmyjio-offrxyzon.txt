@@ -1,0 +1,27 @@
+1. UsingIp: The URL contains a domain name, so it's likely a safe URL.
+2. longUrl: The URL is not considered long, it's within the normal range.
+3. shortUrl: The URL does not match any known short URL patterns, so it's less likely to be suspicious.
+4. symbol: The URL does not contain the '@' symbol, so it's less likely to be suspicious.
+5. redirecting: The URL does not contain redirection '//' after the protocol, so it's less likely to be suspicious.
+6. prefixSuffix: The domain name contains a '-' (hyphen), which might be suggestive of a phishing attempt.
+7. SubDomains: The domain name might contain a single subdomain or none, which could be normal for some legitimate domains.
+8. Hppts: The URL does not use HTTPS which might be less secure, so it could be suspicious.
+9. DomainRegLen: The domain has been registered for a long time, which is less likely to be suspicious.
+10. Favicon: Failed to parse the HTML of the page.
+11. NonStdPort: Standard port or no port specified, which is expected for legitimate sites.
+12. HTTPSDomainURL: URL does not use HTTPS scheme, which might be suspicious.
+13. RequestURL: Error in processing request URLs: 'NoneType' object has no attribute 'find_all'
+14. AnchorURL: An error occurred while checking anchor tags: 'NoneType' object has no attribute 'find_all'
+15. LinksInScriptTags: An error occurred while processing links in 'link' and 'script' tags: 'NoneType' object has no attribute 'find_all'
+16. ServerFormHandler: Domain is not resolvable.
+17. InfoEmail: Domain is not resolvable.
+18. AbnormalURL: No abnormal characters found in the URL, which is expected for legitimate sites.
+19. WebsiteForwarding: No suspicious characters found in the URL, which is expected for legitimate sites.
+20. StatusBarCust: No response from the server; unable to check for JavaScript patterns.
+21. DisableRightClick: Domain is not resolvable.
+22. UsingPopupWindow: No suspicious patterns related to popup windows or alerts found, which is expected for legitimate sites.
+23. IframeRedirection: No response from the server; unable to check for iframe redirection.
+24. AgeofDomain: The domain is relatively new (less than 6 years old), which may be suspicious for a legitimate site.
+26. GoogleIndex: The website is not in the top 10 Google search results (within <a> tags), indicating lower relevance.
+27. LinksPointingToPage: An error occurred while checking the number of links pointing to the page: 'NoneType' object has no attribute 'text'. This could be due to the site structure or an intentional attempt to obfuscate content.
+28. StatsReport: An error occurred while performing the stats check: [Errno 11001] getaddrinfo failed

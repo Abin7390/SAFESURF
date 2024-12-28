@@ -1,0 +1,27 @@
+1. UsingIp: The URL contains a domain name, so it's likely a safe URL.
+2. longUrl: The URL is considered long which might be suspicious.
+3. shortUrl: The URL matches a known short URL pattern, which might be suspicious.
+4. symbol: The URL does not contain the '@' symbol, so it's less likely to be suspicious.
+5. redirecting: The URL does not contain redirection '//' after the protocol, so it's less likely to be suspicious.
+6. prefixSuffix: The domain name doesn't contain a '-' (hyphen), which is less likely to be a characteristic of phishing attempts.
+7. SubDomains: The domain name does not contain subdomains, it's less likely to be suspicious.
+8. Hppts: The URL uses HTTPS which is the secure version of HTTP, so it's less likely to be suspicious.
+9. DomainRegLen: The domain has been registered for a long time, which is less likely to be suspicious.
+10. Favicon: No favicon link found in the page, which might be suspicious.
+11. NonStdPort: Standard port or no port specified, which is expected for legitimate sites.
+12. HTTPSDomainURL: URL uses HTTPS scheme, which is expected for a valid site.
+13. RequestURL: No valid URLs found.
+14. AnchorURL: No anchor tags found.
+15. LinksInScriptTags: Low percentage of links in 'link' and 'script' tags.
+16. ServerFormHandler: No forms found on the page, which is expected for a legitimate site.
+17. InfoEmail: No email-related information found in the HTML content, which is expected for legitimate sites.
+18. AbnormalURL: No abnormal characters found in the URL, which is expected for legitimate sites.
+19. WebsiteForwarding: The URL contains '1', which may indicate website forwarding or obfuscation.
+20. StatusBarCust: No response from the server; unable to check for JavaScript patterns.
+21. DisableRightClick: No suspicious patterns related to disabling right-click functionality found, which is expected for legitimate sites.
+22. UsingPopupWindow: No suspicious patterns related to popup windows or alerts found, which is expected for legitimate sites.
+23. IframeRedirection: No response from the server; unable to check for iframe redirection.
+24. AgeofDomain: The domain is relatively new (less than 6 years old), which may be suspicious for a legitimate site.
+26. GoogleIndex: The website is not in the top 10 Google search results (within <a> tags), indicating lower relevance.
+27. LinksPointingToPage: The page has no links pointing to it, which is unusual for legitimate websites and could be indicative of a phishing attempt.
+28. StatsReport: The URL and IP do not match any known suspicious patterns.

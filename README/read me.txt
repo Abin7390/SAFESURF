@@ -1,0 +1,8 @@
+run this project using following manner:
+
+step 1: activate the virtual environment using the command "venv/Scripts/activate"
+step 2: run the project using the command "python app.py"
+
+
+Developed By 
+Abin Varghese
